@@ -1,6 +1,6 @@
-# PredictiveAI - Maintenance Intelligence
+# Nexara-AI - Maintenance Intelligence
 
-PredictiveAI is an AI-powered predictive maintenance scheduling application designed for manufacturing equipment. Built with Python and Streamlit, this application helps detect degradation patterns, identify near-misses, and generate maintenance schedules using both rule-based heuristics and advanced machine learning techniques.
+NexaraAI is an AI-powered predictive maintenance scheduling application designed for manufacturing equipment. Built with Python and Streamlit, this application helps detect degradation patterns, identify near-misses, and generate maintenance schedules using both rule-based heuristics and advanced machine learning techniques.
 
 ## Features
 
