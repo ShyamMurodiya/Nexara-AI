@@ -30,6 +30,7 @@ from ml_features import (
     predict_failure_probability,
     generate_report_data,
 )
+from utils.youtube_util import get_youtube_search_results, get_video_embed_url
 
 # ── Page Config ──────────────────────────────────────────────────
 st.set_page_config(
@@ -580,6 +581,38 @@ def render_dashboard():
     with tabs[8]:
         render_export_tab()
 
+def render_maintenance_videos(query: str):
+    """Render YouTube maintenance videos for a given query."""
+    st.markdown(f"### 🛠️ {query} Maintenance & Repair Guides")
+    with st.spinner(f"Searching for {query} guides..."):
+        videos = get_youtube_search_results(query)
+    
+    if not videos:
+        st.info("No specific video guides found for this equipment.")
+        return
+
+    # Display the first video as a large featured video
+    featured_video = videos[0]
+    st.markdown(f"**Featured: {featured_video['title']}**")
+    if featured_video.get("video_id"):
+        # Use standard watch URL for st.video
+        st.video(f"https://www.youtube.com/watch?v={featured_video['video_id']}")
+    elif featured_video.get("url"):
+        st.markdown(f"[Watch on YouTube]({featured_video['url']})")
+
+    # If there are more videos, show them in a grid below
+    if len(videos) > 1:
+        st.markdown("---")
+        st.markdown("**Additional Resources:**")
+        cols = st.columns(min(len(videos) - 1, 3))
+        for i, video in enumerate(videos[1:4]): # Show up to 3 more
+            with cols[i % len(cols)]:
+                st.markdown(f"**{video['title']}**")
+                if video.get("video_id"):
+                    st.video(f"https://www.youtube.com/watch?v={video['video_id']}")
+                elif video.get("url"):
+                    st.markdown(f"[Watch on YouTube]({video['url']})")
+
 
 # ── Tab Renderers ────────────────────────────────────────────────
 def render_overview_tab():
@@ -745,6 +778,10 @@ def render_patterns_tab():
             st.markdown("**Evidence:**")
             for e in p.get("evidence", []):
                 st.markdown(f"- {e}")
+            
+            # Add maintenance videos
+            st.markdown("---")
+            render_maintenance_videos(f"{p['equipment_name']} {p['signal']}")
 
 
 def render_near_misses_tab():
@@ -968,6 +1005,11 @@ def render_failure_prediction_tab():
             st.markdown("**Contributing Factors:**")
             for f in p["contributing_factors"]:
                 st.markdown(f"- {f}")
+            
+            # Add maintenance videos
+            if p["risk_level"] in ["CRITICAL", "HIGH", "MEDIUM"]:
+                st.markdown("---")
+                render_maintenance_videos(p["equipment_name"])
 
 
 
