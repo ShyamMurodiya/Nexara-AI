@@ -1,61 +1,184 @@
-# Nexara-AI - Maintenance Intelligence
-
-NexaraAI is an AI-powered predictive maintenance scheduling application designed for manufacturing equipment. Built with Python and Streamlit, this application helps detect degradation patterns, identify near-misses, and generate maintenance schedules using both rule-based heuristics and advanced machine learning techniques.
-
-## Features
-
-- 📈 **Degradation Pattern Detection**: Identify temperature, vibration, and pressure anomalies from equipment logs.
-- ⚠️ **Near-Miss Detection**: Spot parameters that are approaching critical thresholds before failures occur.
-- 📅 **Confidence-Based Scheduling**: Generate maintenance schedules prioritized with confidence scores.
-- 🤖 **Multi-LLM Chat Assistant**: Chat with 5 different AI providers (OpenAI, Anthropic, Gemini, Groq, Cohere) for intelligent log analysis.
-- 🔬 **ML Anomaly Detection**: Uncover hidden anomalies using the Isolation Forest algorithm.
-- 📊 **Failure Prediction**: Estimate machine failure probability using Machine Learning.
-- 📄 **Report Export**: Download comprehensive maintenance reports as DOCX files.
-- 📊 **Data Explorer & Interactive Dashboards**: Explore interactive visualizations built with Plotly.
-
-## Installation
-
-1. Clone or download the repository.
-2. (Optional) Create a virtual environment:
-   ```bash
-   python -m venv venv
-   source venv/bin/activate  # On Windows: venv\Scripts\activate
-   ```
-3. Install the required dependencies:
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-## Configuration
-
-To enable the AI-powered analysis features, you will need to provide your API keys. The application supports multiple LLM providers.
 
 
+🚀 Nexara-AI - Maintenance Intelligence
 
-## Usage
+Nexara-AI is an AI-powered predictive maintenance dashboard for industrial equipment.
+Built with Python and Streamlit, it combines rule-based analytics, machine learning, and LLM-powered insights to detect failures early and optimize maintenance scheduling.
 
-Start the Streamlit application by running:
+⸻
 
-```bash
+✨ Key Features
+	•	📈 Degradation Pattern Detection
+Detect temperature, vibration, and pressure anomalies from equipment logs.
+	•	⚠️ Near-Miss Detection
+Identify parameters approaching critical thresholds before failures occur.
+	•	🤖 AI Analysis Engine
+LLM-powered insights with fallback rule-based reasoning.
+	•	💬 AI Chat Assistant
+Ask questions about equipment health, anomalies, and schedules.
+	•	🔬 ML Anomaly Detection
+Uses Isolation Forest for detecting unusual patterns.
+	•	📊 Failure Prediction
+Predict probability of machine failure.
+	•	📅 Maintenance Scheduling
+Generate prioritized maintenance plans with confidence scores.
+	•	📄 Report Generation
+Export human-readable reports (DOCX-ready).
+	•	📊 Interactive Dashboard
+Visualizations using Plotly inside Streamlit.
+
+⸻
+
+
+
+## 📸 Screenshots
+
+### Dashboard
+![Dashboard](assets/dashboard.png)
+
+### Home Page
+![Home](assets/homepic1.png)
+
+### More View
+![More](assets/homepic2.png)
+
+⸻
+
+🛠️ Installation
+
+1. Clone Repository
+
+git clone https://github.com/ShyamMurodiya/Nexara-AI.git
+cd Nexara-AI
+
+
+⸻
+
+2. Create Virtual Environment
+
+python -m venv .venv
+
+Activate:
+
+Mac/Linux
+
+source .venv/bin/activate
+
+Windows
+
+.venv\Scripts\activate
+
+
+⸻
+
+3. Install Dependencies
+
+pip install -r requirements.txt
+
+
+⸻
+
+⚙️ Configuration (Optional)
+
+Create a .env file for AI features:
+
+cp .env.example .env
+
+Add your API key:
+
+HUGGINGFACE_API_KEY=your_key_here
+
+
+⸻
+
+▶️ Run the Project
+
 streamlit run app.py
-```
 
-Once the application is running, you can:
-1. Upload your equipment log CSV file via the sidebar.
-2. Alternatively, click **"Load Sample Data"** to try out the application with the included sample dataset (`dataset/sample_logs.csv`).
-3. Explore the various tabs including Dashboard, Patterns, Near-Misses, Schedule, ML Anomaly Detection, and the Multi-LLM Chat Assistant.
 
-## Project Structure
+⸻
 
-- `app.py`: The main Streamlit dashboard application.
-- `ai_engine.py`: Handles integrations with various LLM providers for data analysis and the chat assistant.
-- `ml_features.py`: Contains machine learning models for anomaly detection and failure prediction.
-- `pattern_detector.py`: Implements rule-based heuristics for degradation pattern and near-miss detection.
-- `llm_provider.py`: Utility module for managing LLM clients.
-- `dataset/`: Contains sample data for demonstration.
-- `.env.example`: Template for environment variables.
-- `requirements.txt`: Python package dependencies.
+🌐 Access App
 
-## License
+After running:
 
-This project is licensed under the MIT License.
+http://localhost:8501
+
+
+⸻
+
+📊 How to Use
+	1.	Upload your equipment CSV file
+	2.	Or click “Load Sample Data”
+	3.	Explore:
+	•	Dashboard
+	•	Patterns
+	•	Near-Misses
+	•	ML Anomalies
+	•	Maintenance Schedule
+	4.	Use AI Chat for insights
+
+⸻
+
+📁 Project Structure
+
+Nexara-AI/
+├── app.py
+├── ai_engine.py
+├── ml_features.py
+├── pattern_detector.py
+├── llm_provider.py
+├── dataset/
+│   └── sample_logs.csv
+├── assets/                # Screenshots go here
+├── requirements.txt
+├── README.md
+└── .env.example
+
+
+⸻
+
+🧪 Testing
+
+pytest
+
+or
+
+python test_full.py
+
+
+⸻
+
+⚠️ Notes
+	•	LLM features require API keys
+	•	Without API → fallback rule-based logic
+	•	Do NOT upload .venv or .env
+
+⸻
+
+🔮 Future Improvements
+	•	PDF/DOCX export
+	•	Real-time IoT integration
+	•	Cloud deployment (Streamlit Cloud / Docker)
+	•	Advanced ML models
+
+⸻
+
+🤝 Contributing
+
+Pull requests are welcome.
+For major changes, open an issue first.
+
+⸻
+
+📄 License
+
+MIT License
+
+⸻
+
+👨‍💻 Author
+
+Shyam Murodiya
+GitHub: https://github.com/ShyamMurodiya
+:::
