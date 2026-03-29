@@ -29,18 +29,14 @@ Visualizations using Plotly inside Streamlit.
 
 ⸻
 
+📸 Screenshots
 
+Dashboard
 
-## 📸 Screenshots
+Home Page
 
-### Dashboard
-![Dashboard](assets/dashboard.png)
+More View
 
-### Home Page
-![Home](assets/homepic1.png)
-
-### More View
-![More](assets/homepic2.png)
 
 ⸻
 
@@ -102,8 +98,7 @@ streamlit run app.py
 
 After running:
 
-http://localhost:8501
-
+👉 http://localhost:8501
 
 ⸻
 
@@ -130,7 +125,7 @@ Nexara-AI/
 ├── llm_provider.py
 ├── dataset/
 │   └── sample_logs.csv
-├── assets/                # Screenshots go here
+├── assets/                # Screenshots
 ├── requirements.txt
 ├── README.md
 └── .env.example
