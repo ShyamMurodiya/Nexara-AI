@@ -39,59 +39,58 @@ More View
 
 
 ⸻
+## 🛠️ Installation
 
-🛠️ Installation
-
-1. Clone Repository
-
+### 1. Clone Repository
+```bash
 git clone https://github.com/ShyamMurodiya/Nexara-AI.git
 cd Nexara-AI
+```
 
+---
 
-⸻
-
-2. Create Virtual Environment
-
+### 2. Create Virtual Environment
+```bash
 python -m venv .venv
+```
 
 Activate:
 
-Mac/Linux
-
+**Mac/Linux**
+```bash
 source .venv/bin/activate
+```
 
-Windows
-
+**Windows**
+```bash
 .venv\Scripts\activate
+```
 
+---
 
-⸻
-
-3. Install Dependencies
-
+### 3. Install Dependencies
+```bash
 pip install -r requirements.txt
+```
 
+---
 
-⸻
+## ⚙️ Configuration (Optional)
 
-⚙️ Configuration (Optional)
-
-Create a .env file for AI features:
-
+```bash
 cp .env.example .env
+```
 
-Add your API key:
-
+```env
 HUGGINGFACE_API_KEY=your_key_here
+```
 
+---
 
-⸻
-
-▶️ Run the Project
-
+## ▶️ Run the Project
+```bash
 streamlit run app.py
-
-
+```
 ⸻
 
 🌐 Access App
